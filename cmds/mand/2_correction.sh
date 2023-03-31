@@ -271,6 +271,7 @@ cd /bin/../bin/../bin/../bin/../bin/../bin/../bin/../bin/
 ../bin/../bin/ls
 
 unset PATH
+cd /bin/
 sleep 2
 
 mkdir tmp_path_test1 tmp_path_test2

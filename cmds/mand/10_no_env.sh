@@ -3,6 +3,9 @@
 # **************************************************************************** #
 
 env -i ./minishell
+/bin/echo $HOME$NOTHING$USER$
+
+env -i ./minishell
 pwd
 
 env -i ./minishell
@@ -37,6 +40,22 @@ echo "$T" "meg"
 env -i ./minishell
 cd /bin/
 ls
+
+env -i ./minishell
+export a="asd" b="de" o= c="hellomi" X
+unset o
+
+env -i ./minishell
+export a="asd" b="de" o= c="hellomi" X
+unset X
+
+env -i ./minishell
+export a="asd" b="de" o= c="hellomi" X
+unset o a X b c
+
+env -i ./minishell
+export a="asd" b="de" o= c="hellomi" X
+unset o asd B x X wqd c
 
 unset PATH
 env -i ./minishell
@@ -115,3 +134,40 @@ stop
 /bin/rm -f out2
 /bin/rm -f out3
 cd ..
+
+env -i ./minishell
+cd /bin/
+cat Makefile > out >>out1 >out2 > out3 >> out4
+cat Makefile > out >>out1 >out2 > out3 >> out4
+/bin/rm -f out
+/bin/rm -f out1
+/bin/rm -f out2
+/bin/rm -f out3
+/bin/rm -f out4
+
+env -i ./minishell
+> out
+/bin/rm -f out
+
+env -i ./minishell
+< out
+/bin/rm -f out
+
+env -i ./minishell
+|
+
+env -i ./minishell
+>> out
+/bin/rm -f out
+
+env -i ./minishell
+<< out
+where
+is
+MY
+ENV?
+BRING IT BACK!
+out
+
+env -i ./minishell
+i hope you enjoy it

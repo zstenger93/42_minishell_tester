@@ -9,6 +9,31 @@
 
 /bin/echo $HOME$USER
 
+/bin/echo $HOME$NOTHING$USER$
+
+export a="asd"
+
+export a="asd" b="de" o= c="hellomi" X
+
+export miert ne lehetne ezt is
+
+export a="asd"
+unset a
+
+export a="asd" b="de" o= c="hellomi" X
+unset o
+
+export a="asd" b="de" o= c="hellomi" X
+unset X
+
+export a="asd" b="de" o= c="hellomi" X
+unset o a X b c
+
+export a="asd" b="de" o= c="hellomi" X
+unset o asd B x X wqd c
+
+export miert ne lehetne ezt is
+
 /bin/echo $"HOME"$USER
 
 /bin/echo $"HOM"E$USER
@@ -111,7 +136,7 @@ export X="  A  B  "
 /bin/echo $X'2'
 
 export X="  A  B  "
-/bin/echo "1"$X
+/bin/echo $X"1"
 
 export X=""
 /bin/echo "1"$X'2'

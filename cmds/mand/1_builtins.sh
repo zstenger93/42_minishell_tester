@@ -3,6 +3,36 @@
 # **************************************************************************** #
 
 ### ECHO ###
+echo '"$USER"'
+
+echo "'$USER'"
+
+echo ""'$USER'""
+
+echo '"'$USER'"'
+
+echo "''$USER''"
+
+echo "'"'$USER'"'"
+
+echo '"'"$USER"'"'
+
+echo """"""""$USER""""""""
+
+echo \$USER
+
+echo \\$USER
+
+echo \\\$USER
+
+echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$USER \$PATH \\$PWD
+
+echo "cat lol.c | cat > lol.c"
+
+echo "cat lol.c '|' cat > lol.c"
+
+echo '$USER' "$USER" "text \' text"
+
 echo
 
 echo ''
@@ -88,6 +118,8 @@ pwd
 cd ..
 pwd
 
+cd $OLDPWD
+
 pwd
 cd .
 pwd
@@ -152,6 +184,10 @@ pwd
 pwd
 cd _
 pwd
+
+cd ../../
+cd -
+cd -
 
 pwd
 cd echo
@@ -219,6 +255,8 @@ env | grep USER
 
 env | wc -l
 
+env what
+
 ### PWD ###
 pwd
 
@@ -246,6 +284,8 @@ export HOME=42
 env | grep HOME
 
 export =============123
+
+export
 
 export =
 
@@ -289,6 +329,8 @@ export mini_test=
 env | grep mini_test
 
 ### UNSET ###
+unset
+
 unset ""
 
 unset =
@@ -333,6 +375,13 @@ unset HOME
 /bin/echo $HOME
 
 ###  EXIT ###
+
+exit 9223372036854775807
+
+exit something somethingv2
+
+exit 0 0
+
 exit
 
 exit ""

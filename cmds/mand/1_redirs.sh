@@ -117,7 +117,7 @@ $NOVAR
 $HOME
 lim
 
-cat << ''lim
+cat << "lim"
 $USER
 $NOVAR
 $HOME
@@ -128,3 +128,12 @@ $USER
 $NOVAR
 $HOME
 lim
+
+> out
+/bin/rm -f out
+
+< out
+/bin/rm -f out
+
+>> out
+/bin/rm -f out

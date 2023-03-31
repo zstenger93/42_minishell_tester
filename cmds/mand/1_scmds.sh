@@ -10,6 +10,11 @@ cat cmds.sh
 
 ""
 
+asd
+expr $? + $?
+
+expr 21 + 21
+
 "ls"
 
 "cat cmds.sh"
@@ -18,6 +23,11 @@ cat cmds.sh
 
 ""'/bin/'echo test1
 
+awk '$1 ~ /^d/ {print $9}'
+
+awk 'BEGIN{for(i=1;i<=10;i++){for(j=1;j<=10;j++){printf("%4d ",i*j)} printf("\n")}}' /dev/null | tail -n 10
+
+awk 'BEGIN{for(i=1;i<=1000000;i++)print int(rand()*1000)}' | awk '{sum+=$1} END {print sum/NR}'
 
 # **************************************************************************** #
 #   BROKEN SCMD                                                                #
@@ -35,9 +45,13 @@ cat cmds.sh
 
 "./"''"ls"
 
+3123
+
 lsa
 
 /ls
+
+EechoE
 
 /ls/
 
@@ -46,3 +60,9 @@ lsa
 /bin/cats
 
 ./4242424242.sh
+
+rm -f something
+
+| echo -n oui
+
+| | |

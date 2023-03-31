@@ -20,6 +20,10 @@ echo 42 | echo no | echo smth | grep no
 
 echo 42 | echo no | echo smth | grep smth
 
+/bin/env | grep "_="
+
+/bin/env | grep "SHLVL"
+
 /bin/echo 1 | kaka
 
 echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
@@ -88,14 +92,11 @@ f
 stop
 dw
 stop1
-dw
+dwasd
 stop2
-e
-wf
-stop3
-ls
-rm -f out
-ls
+cat Makefile | ls > out
+cat out
+/bin/rm -f out
 
 ls | cat << stop | ls -la > out0| cat << stop1 | ls | cat << stop2 | ls -la >> out | cat << stop3
 fe
@@ -162,3 +163,5 @@ pwd
 cd .. |ls|cat Makefile|>> out
 pwd
 /bin/rm -f out
+
+ls -l | awk '$1 ~ /^d/ {print $9}'
