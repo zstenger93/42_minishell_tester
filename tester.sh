@@ -112,11 +112,11 @@ test_from_file() {
 			# if [[ $line == "###"[[:blank:]]*[[:blank:]]"###" ]] ; then
 			# 	echo -e "\033[0;33m$line\033[m"
 			if [[ $line == "#"[[:blank:]]*[[:blank:]]"#" ]] ; then
-				echo -e "\033[0;33m$line\033[m" | tr '\t' '    '
+				echo -e "\033[0;33m		$line\033[m" | tr '\t' '    '
 			fi
 			continue
 		else
-			printf "\033[0;35m%-4s\033[m" "$i:"
+			printf "\033[0;35m%-4s\033[m" "  $i:	"
 			tmp_line_count=$line_count
 			while [[ $end_of_file == 0 ]] && [[ $line != \#* ]] && [[ $line != "" ]] ;
 			do

@@ -1,8 +1,14 @@
 # **************************************************************************** #
-#   BUILTINS                                                                   #
+#                                   BUILTINS                                   #
 # **************************************************************************** #
 
 ### ECHO ###
+echo ""$?""
+
+echo $?"42"
+
+echo ''$?''"42"
+
 echo '"$USER"'
 
 echo "'$USER'"
@@ -17,7 +23,27 @@ echo "'"'$USER'"'"
 
 echo '"'"$USER"'"'
 
+echo $"HOME"$USER
+
+echo $"HOM"E$USER
+
+echo $"HOME"
+
+echo $"42$"
+
 echo """"""""$USER""""""""
+
+echo "$ "
+
+echo '$='
+
+echo '$ '
+
+echo "$?"
+
+echo '$?'
+
+echo "'$?'"
 
 echo \$USER
 
@@ -25,13 +51,19 @@ echo \\$USER
 
 echo \\\$USER
 
+echo \\\\$USER
+
+echo \\\\\$USER
+
+echo \\\\\\\\\$USER
+
 echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$USER \$PATH \\$PWD
 
 echo "cat lol.c | cat > lol.c"
 
 echo "cat lol.c '|' cat > lol.c"
 
-echo '$USER' "$USER" "text \' text"
+echo '$USER' "$USER" "text  ' text"
 
 echo
 
@@ -59,6 +91,11 @@ echo " test1 test2 " 'test3 '
 
 echo test1		test2
 
+echo $USER$TESTNOTFOUND$HOME$
+
+echo $USER$TESTNOTFOUND$HOME$WTF$PWD
+
+
 echo -n test1
 
 echo -n "test1 test2"
@@ -76,6 +113,8 @@ echo "test1 -n"
 echo -n -n test1
 
 echo -n -n -n -n -n test1
+
+echo "  -nn "
 
 echo "-n test1 -n test2"
 
@@ -118,6 +157,7 @@ pwd
 cd ..
 pwd
 
+cd ..
 cd $OLDPWD
 
 pwd
