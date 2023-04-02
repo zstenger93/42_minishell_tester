@@ -45,6 +45,8 @@
 <h3>The people made this tester possible:</h3>
 
 ```
+Base made by: Tim https://github.com/tjensen42
+My minishell pain
 ```
 
 <h3>Feel free open a pull request to add more test</h3>
