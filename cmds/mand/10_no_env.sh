@@ -16,6 +16,7 @@ unset USER
 
 env -i ./minishell
 cd -
+pwd
 
 env -i ./minishell
 echo "no env over here"
@@ -32,6 +33,7 @@ exit 5 asd
 env -i ./minishell
 unset OLDPWD
 cd -
+pwd
 
 env -i ./minishell
 export T=bazd
@@ -134,6 +136,7 @@ stop
 /bin/rm -f out2
 /bin/rm -f out3
 cd ..
+pwd
 
 env -i ./minishell
 cd /bin/
