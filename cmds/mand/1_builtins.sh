@@ -27,6 +27,8 @@ echo $"HOME"$USER
 
 echo $"HOM"E$USER
 
+echo "exit_code ->$? user ->$USER home -> $HOME"
+
 echo $"HOME"
 
 echo $"42$"
@@ -425,6 +427,12 @@ exit 0 0
 exit
 
 exit ""
+
+exit "+100"
+
+exit "-100"
+
+exit -9223372036854775805
 
 exit 0
 

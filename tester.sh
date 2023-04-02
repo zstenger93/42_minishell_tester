@@ -21,8 +21,8 @@ GOOD_TEST=0
 main() {
 	if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then
 		echo -e "\033[0;31m# **************************************************************************** #"
-		echo "#    MINISHELL NOT COMPILED                                                    #"
-		echo "#    TRY TO COMPILE ...                                                        #"
+		echo "#                            MINISHELL NOT COMPILED                            #"
+		echo "#                              TRY TO COMPILE ...                              #"
 		echo -e "# **************************************************************************** #\033[m"
 		make -C $MINISHELL_PATH
 		if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then

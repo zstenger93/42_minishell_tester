@@ -1,6 +1,11 @@
 # **************************************************************************** #
 #                                  PIPELINES                                   #
 # **************************************************************************** #
+env | sort | grep -v SHLVL | grep -v ^_
+
+cat ./test_files/infile_big | grep oi
+
+export GHOST=123 | env | grep GHOST
 
 /bin/echo 1 | grep 1
 
