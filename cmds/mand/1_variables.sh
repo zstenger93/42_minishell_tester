@@ -69,8 +69,20 @@ export miert ne lehetne ezt is
 /bin/echo '$ '
 
 /bin/echo $TESTNOTFOUND
+
 /bin/echo $HOME$TESTNOTFOUND
+
 /bin/echo $TESTNOTFOUND$HOME
+
+/bin/echo $TESTNOTFOUND$HOME$
+
+cd ..$PWD
+
+mkdir test
+cd $PWD/test
+rm -rf test
+
+/bin/echo $PWD/random_folder
 
 /bin/echo ""$?""
 /bin/echo " "$?" "

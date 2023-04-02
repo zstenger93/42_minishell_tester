@@ -194,6 +194,30 @@ pwd
 cd "$PWD/file_tests"
 pwd
 
+cd '/////' 2>/dev/null
+
+cd '/etc' 
+
+cd '/var' 
+
+cd "doesntexist" 2>/dev/null 
+
+cd ../../..
+
+cd "wtf" 2>/dev/null 
+
+cd ?
+
+cd +
+
+cd _
+
+cd woof
+
+cd bark bark
+
+cd '/' 
+
 pwd
 cd "doesntexist"
 pwd
@@ -347,6 +371,88 @@ export test
 
 export TEST
 
+export $? 
+
+export TEST
+
+export TEST=
+
+export TEST=123
+
+export ___TEST=123
+
+export --TEST=123
+
+export ''=''
+
+export "="="="
+
+export '='='='
+
+export TE-ST=100
+
+export -TEST=100
+
+export TEST-=100
+
+export _TEST=100
+
+export ==========
+
+export 1TEST=
+
+export ""=""
+
+export TES=T=""
+
+export TE+S=T=""
+
+export TES.T=123
+
+export TES.T=123
+
+export TES+T=123
+
+export TES=T=123
+
+export TES}T=123
+
+export TES{T=123
+
+export TES-T=123
+
+export -TEST=123
+
+export _TEST=123
+
+export TES_T=123
+
+export TEST_=123
+
+export TE*ST=123
+
+export TES#T=123
+
+export TES@T=123
+
+export TES!T=123
+
+export TES$?T=123
+
+export =============123
+
+export +++++++=123
+
+export ________=123
+
+export TES^T=123
+
+export TES!T=123
+
+export TES\~T=123
+
+export TEST+=100
+
 export TES_T=123
 /bin/echo $TES_T
 env | grep TES_T
@@ -394,6 +500,74 @@ unset $
 unset "$"
 
 unset $""
+
+export TEST=100
+
+unset doesntexist
+
+unset OLDPWD 
+
+unset PATH 
+
+unset PATH 
+
+unset PATH 
+
+unset TES;T
+
+unset TES.T
+
+unset TES+T
+
+unset TES=T
+
+unset TES}T
+
+unset TES{T
+
+unset TES-T
+
+unset -TEST
+
+unset _TEST
+
+unset TES_T
+
+unset TEST_
+
+unset TE*ST
+
+unset TES#T
+
+unset TES@T
+
+unset TES!T
+
+unset TES$?T
+
+unset ============
+
+unset +++++++
+
+unset ________
+
+unset export
+
+unset echo
+
+unset pwd
+
+unset cd
+
+unset unset
+
+unset sudo
+
+unset TES^T
+
+unset TES!T
+
+unset TES\~T
 
 /bin/echo $HOME
 unset $HOME
@@ -503,3 +677,5 @@ exit echo
 exit cd ..
 
 exit exit
+
+exit 42 42 42 42 42 

@@ -21,7 +21,7 @@ expr 21 + 21
 
 "/bin/echo" test1
 
-'/bin/'echo test1
+'/bin/echo test1'
 
 awk '$1 ~ /^d/ {print $9}'
 
