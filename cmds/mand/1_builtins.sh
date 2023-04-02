@@ -67,6 +67,30 @@ echo "cat lol.c '|' cat > lol.c"
 
 echo '$USER' "$USER" "text  ' text"
 
+echo $USER =intergalaktikus miaf*szomez
+
+echo -n"-n" bonjour
+
+echo "'$USER'"
+
+echo " '$USER' "
+
+echo text"$USER"
+
+echo text"'$USER'" ' $USER '
+
+echo "text"   "$USER"    "$USER"
+
+echo '              $USER          '
+
+echo ''''''''''$USER''''''''''
+
+echo """"""""$USER""""""""
+
+echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+
+echo "text" "text$USER" ... "$USER"
+
 echo
 
 echo ''
