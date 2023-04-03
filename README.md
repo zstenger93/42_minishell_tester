@@ -40,7 +40,7 @@
 <h3>cd to the testers folder</h3>
 
 ```bash
-	bash tester.sh m
+bash tester.sh m
 ```
 
 <h3>options: m, b, a</h3>
