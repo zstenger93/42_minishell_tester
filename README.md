@@ -5,9 +5,9 @@
 ---
 
 <h1>Disclaimer</h1>
-<h2>Try to write your own test first and don't just run a tester mindlessly</h2>
-<h2>You don't have to pass all the cases in this tester</h2>
-<h2>If you want to check leaks outside of your manual checking:</h2>
+<h3>Try to write your own test first and don't just run a tester mindlessly</h3>
+<h3>You don't have to pass all the cases in this tester</h3>
+<h3>If you want to check leaks outside of your manual checking:</h3>
 
 [This is good one to check valgrind](https://github.com/thallard/minishell_tester)
 <h3>A bit more time to set it up, but worth it</h3>
