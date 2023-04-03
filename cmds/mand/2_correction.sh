@@ -70,13 +70,13 @@ expr $? + $?
 
 echo "Hello World"
 
-echo "  " Hello World
+echo "  ""Hello World"
 
 echo "  "Hello "World "
 
 "echo" 42
 
-"e"cho 42
+"echo 42"
 
 echo " cat ' lol.c"
 

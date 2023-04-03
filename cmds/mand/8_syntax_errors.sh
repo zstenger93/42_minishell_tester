@@ -12,6 +12,12 @@
 
 >> >> >> >>
 
+>>>>>>>>>
+
+<<<<<<<<<
+
+~
+
 < < < < < <
 
 /bin/cat ><
@@ -27,6 +33,8 @@ echo > <
 .
 
 ..
+
+echo | |
 
 EechoE
 
@@ -49,8 +57,6 @@ trying to destroy your minishell
 | | |
 
 | | | | test
-
-test
 
 | test
 
