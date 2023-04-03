@@ -45,7 +45,10 @@
 <h3>The people made this tester possible:</h3>
 
 Base made by: [Tim](https://github.com/tjensen42) && [Hepple](https://github.com/hepple42)
+
 Upgraded by: [Zsolt](https://github.com/zstenger93)
+
+and
 
 ```
 My minishell pain
