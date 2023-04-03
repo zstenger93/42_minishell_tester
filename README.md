@@ -1,15 +1,17 @@
+<div align=center>
 <h1>42_minishell_tester</h1>
 <h2>How To Use</h2>
 <h3>First you should comment out everything what prints to terminal eg "exit" at exit</h3>
 <h3>Then modify your main loop:</h3>
 <h3>You should only read with readline and use your own prompt when you launch the program by yourself typing ./minihsell into the terminal</h3>
+</div>
 
 ```c
 	if (isatty(fileno(stdin)))
 		shell->prompt = readline(shell->terminal_prompt);
 ```
 
-<h3>Else if it is opened by another program/tester for example then use readline as follows</h3>
+<h3 align=center>Else if it is opened by another program/tester for example then use readline as follows</h3>
 
 ```c
 	char *line;
@@ -18,7 +20,7 @@
 	free(line);
 ```
 
-<h3>So it should look like something like this:</h3>
+<h3 align=center>So it should look like something like this:</h3>
 
 ```c
 	if (isatty(fileno(stdin)))
@@ -31,7 +33,7 @@
 		free(line);
 	}
 ```
-
+<div align=center>
 <h3>I think from this you pretty much can figure it out :)</h3>
 <h2>How to launch the tester</h2>
 <h3>Clone it to the root of your minishell</h3>
@@ -42,7 +44,7 @@
 ```
 
 <h3>options: m, b, a</h3>
-<h3>The people made this tester possible:</h3>
+<h2>The people made this tester possible:</h2>
 
 Base made by: [Tim](https://github.com/tjensen42) && [Hepple](https://github.com/hepple42)
 
@@ -55,3 +57,4 @@ My minishell pain
 ```
 
 <h3>Feel free open a pull request to add more test</h3>
+</div>
