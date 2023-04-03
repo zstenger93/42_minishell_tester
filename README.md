@@ -1,5 +1,7 @@
 <div align=center>
 <h1>📖 42_minishell_tester</h1>
+<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/result.png">
+
 <h1>Disclaimer</h1>
 <h2>Try to write your own test first and don't just run a tester mindlessly</h2>
 <h2>You don't have to pass all the cases in this tester</h2>
