@@ -13,7 +13,7 @@
 
 [This is good one to check valgrind](https://github.com/thallard/minishell_tester)
 <h3>A bit more time to set it up, but worth it</h3>
-<h3>The first time if you run this and expect a lot of errors</h3>
+<h3>The first time if you run the tester above and expect a lot of errors</h3>
 <h3>Then redirect each of the output from stdin and strerror to a file otherwise you won't be able see all of the errors</h3>
 
 ---
@@ -91,6 +91,6 @@ bash tester.sh a
 ---
 
 <h3>Feel free to ask on slack if you have a question</h3>
-<h3>Or open a pull request if you would like to add more test</h3>
+<h3>Or open a pull request if you would like to add more tests</h3>
 <h3>Looking for people who would like to add more tests to the bonus part, because we haven't done it</h3>
 </div>
