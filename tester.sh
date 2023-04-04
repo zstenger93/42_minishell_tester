@@ -72,7 +72,6 @@ print_stats() {
 	printf "\033[0;35m%-4s\033[m" "                     TOTAL TEST COUNT: $TEST_COUNT "
 	printf "\033[0;32m TESTS PASSED: $GOOD_TEST\033[m "
 	echo ""
-	echo -e "\033[0;35m\033[m" "                                   RESULT:  "
 	echo -ne "\033[0;34m                     STD_OUT:\033[m "
 	if [[ $TEST_KO_OUT == 0 ]] ; then
 		echo -ne "\033[0;32m✓ \033[m  "
@@ -92,7 +91,7 @@ print_stats() {
 		echo -ne "\033[0;31m$TEST_KO_EXIT\033[m  "
 	fi
 	echo ""
-	echo -e "\033[0;33m                         TOTAL FAIL AND PASSED CASES:"
+	echo -e "\033[0;33m                         TOTAL FAILED AND PASSED CASES:"
 	echo -e "\033[0;31m                                 FAILED: $FAILED \033[m  "
 	echo -ne "\033[0;32m                                 PASSED: $TEST_OK \033[m  "
 	echo ""
