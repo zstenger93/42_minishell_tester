@@ -5,6 +5,7 @@
 ---
 
 <h1>Disclaimer</h1>
+<h3>Don't trust 100% the leak check, try it yourself as well and the linked tester below</h3>
 <h3>Try to write your own test first and don't just run a tester mindlessly</h3>
 <h3>You don't have to pass all the cases in this tester</h3>
 <h3>If you want to check leaks outside of your manual checking:</h3>
@@ -71,12 +72,20 @@ My minishell pain
 <h1>How to launch the tester</h1>
 <h3>Clone it to the root of your minishell</h3>
 <h3>cd to the testers folder</h3>
+<h2>OPTIONS</h2>
 
 ```bash
 bash tester.sh m
 ```
-
-<h3>options: m, b, a</h3>
+```bash
+bash tester.sh vm
+```
+```bash
+bash tester.sh b
+```
+```bash
+bash tester.sh a
+```
 
 ---
 
