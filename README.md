@@ -1,4 +1,4 @@
-<div align=center>
+
 <h1>📖 42_minishell_tester</h1>
 <img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/result.png">
 <img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/leakcheck.png">
@@ -93,4 +93,3 @@ bash tester.sh a
 Feel free to ask on slack if you have a question
 Or open a pull request if you would like to add more tests
 Looking for people who would like to add more tests to the bonus part, because we haven't done it
-</div>
