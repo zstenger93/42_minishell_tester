@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Change if you store the tester in another PATH
-export MINISHELL_PATH=../
+export MINISHELL_PATH=./
 export EXECUTABLE=minishell
+RUNDIR=$HOME/42_minishell_tester
 
 NL=$'\n'
 TAB=$'\t'
@@ -51,7 +52,7 @@ main() {
 }
 
 test_mandatory_leaks() {
-	FILES="cmds/mand/*"
+	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
 		test_leaks $file
@@ -59,7 +60,7 @@ test_mandatory_leaks() {
 }
 
 test_mandatory() {
-	FILES="cmds/mand/*"
+	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
 		test_from_file $file
@@ -67,7 +68,7 @@ test_mandatory() {
 }
 
 test_bonus() {
-	FILES="cmds/bonus/*"
+	FILES="${RUNDIR}/cmds/bonus/*"
 	for file in $FILES
 	do
 		test_from_file $file
