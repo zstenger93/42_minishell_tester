@@ -25,10 +25,10 @@ elif [[ "$SHELL" == *"zsh"* ]]; then
     RC_FILE="$HOME/.zshrc"
 fi
 
-if ! grep "mstester=" $RC_FILE &> /dev/null; then
-	echo "mstester alias not present"
+if ! grep "mstest=" $RC_FILE &> /dev/null; then
+	echo "mstest alias not present"
 	echo "Adding alias in file: $RC_FILE"
-	echo -e "\nalias mstester=\"bash $HOME/42_minishell_tester/tester.sh\"\n" >> $RC_FILE
+	echo -e "\nalias mstest=\"bash $HOME/42_minishell_tester/tester.sh\"\n" >> $RC_FILE
 fi
 
 exec $SHELL

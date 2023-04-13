@@ -41,12 +41,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_
 
 The tester will be installed in the `$HOME/42_minishell_tester` directory.
 
-After installation an alias `mstester` will be automaticly added in `.zshrc` or `.bashrc`
+After installation an alias `mstest` will be automaticly added in `.zshrc` or `.bashrc`
 
 So that you can run the program in any directory (where your minishell is) by calling
 
 ```
-mstester
+mstest
 ```
 
 ---

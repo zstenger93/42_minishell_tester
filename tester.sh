@@ -44,7 +44,12 @@ main() {
 		[[ ! -f $2 ]] && echo "\"$2\" FILE NOT FOUND"
 		[[ -f $2 ]] && test_from_file $2
 	else
-		echo "usage: bash test.sh [m,b,a] || usage with special file: bash test.sh -f ..path_to_file_to_test"
+		echo "usage: mstest [m,vm,b,a]"
+		echo "m: mandatory tests"
+		echo "vm: mandatory tests with valgrind"
+		echo "b: bonus tests"
+		echo "a: mandatory and bonus tests"
+
 	fi
 	if [[ $TEST_COUNT -gt 0 ]] ; then
 		print_stats
