@@ -29,6 +29,25 @@ and
 ```
 My minishell pain
 ```
+---
+
+<h1>How To Install and run</h1>
+
+To install the script, copy and run following command:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_tester/main/install.sh)" 
+```
+
+The tester will be installed in the `$HOME/42_minishell_tester` directory.
+
+After installation an alias `mstest` will be automaticly added in `.zshrc` or `.bashrc`
+
+So that you can run the program in any directory (where your minishell is) by calling
+
+```
+mstest
+```
 
 ---
 

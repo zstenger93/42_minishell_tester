@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Change if you store the tester in another PATH
-export MINISHELL_PATH=../
+export MINISHELL_PATH=./
 export EXECUTABLE=minishell
+RUNDIR=$HOME/42_minishell_tester
 
 NL=$'\n'
 TAB=$'\t'
@@ -43,7 +44,12 @@ main() {
 		[[ ! -f $2 ]] && echo "\"$2\" FILE NOT FOUND"
 		[[ -f $2 ]] && test_from_file $2
 	else
-		echo "usage: bash test.sh [m,b,a] || usage with special file: bash test.sh -f ..path_to_file_to_test"
+		echo "usage: mstest [m,vm,b,a]"
+		echo "m: mandatory tests"
+		echo "vm: mandatory tests with valgrind"
+		echo "b: bonus tests"
+		echo "a: mandatory and bonus tests"
+
 	fi
 	if [[ $TEST_COUNT -gt 0 ]] ; then
 		print_stats
@@ -51,7 +57,7 @@ main() {
 }
 
 test_mandatory_leaks() {
-	FILES="cmds/mand/*"
+	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
 		test_leaks $file
@@ -59,7 +65,7 @@ test_mandatory_leaks() {
 }
 
 test_mandatory() {
-	FILES="cmds/mand/*"
+	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
 		test_from_file $file
@@ -67,7 +73,7 @@ test_mandatory() {
 }
 
 test_bonus() {
-	FILES="cmds/bonus/*"
+	FILES="${RUNDIR}/cmds/bonus/*"
 	for file in $FILES
 	do
 		test_from_file $file
