@@ -56,9 +56,12 @@ asd
 unset PATH
 echo $?
 
-cat <"./Makefile" >"./Makefile"
+touch whatever
+cat <"./whatever" >"./whatever"
+rm -rf whatever
 
 ls >"./ with spaces"
+rm -rf " with spaces"
 
 # **************************************************************************** #
 #                                  BROKEN SCMD                                 #

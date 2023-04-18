@@ -80,6 +80,7 @@ cd ..$PWD
 
 mkdir test
 cd $PWD/test
+cd..
 rm -rf test
 
 /bin/echo $PWD/random_folder
