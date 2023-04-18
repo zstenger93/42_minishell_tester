@@ -37,6 +37,10 @@ echo """"""""$USER""""""""
 
 echo "$ "
 
+echo hi >./outfiles/outfile01 | echo bye
+
+echo <123 <456 hi | echo 42
+
 echo '$='
 
 echo '$ '
