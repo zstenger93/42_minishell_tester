@@ -5,6 +5,17 @@
 
 ---
 
+<h1>Updates</h1>
+Tests without environment now are updated, separated and can be run with:
+
+```bash
+bash tester.sh ne
+```
+
+Now they should be working better, still don't trust it 100% and do test yourself as well to understand. It's a bit tricky to do test's well in this case because if you run `env -i bash` it disables only partially. it will still have most things, but if you do `unset PATH` afterwards, will see the difference.
+
+---
+
 <h1>Disclaimer</h1>
 Don't trust 100% the leak check, try it yourself as well and the linked tester below
 Try to write your own test first and don't just run a tester mindlessly
@@ -99,6 +110,9 @@ bash tester.sh m
 ```
 ```bash
 bash tester.sh vm
+```
+```bash
+bash tester.sh ne
 ```
 ```bash
 bash tester.sh b
