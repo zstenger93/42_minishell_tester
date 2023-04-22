@@ -12,7 +12,11 @@ Tests without environment now are updated, separated and can be run with:
 bash tester.sh ne
 ```
 
-Now they should be working better, still don't trust it 100% and do test yourself as well to understand. It's a bit tricky to do test's well in this case because if you run `env -i bash` it disables only partially. it will still have most things, but if you do `unset PATH` afterwards, will see the difference.
+Now they should be working better, still don't trust it 100% and do test yourself as well to understand.
+It's a bit tricky to do test's well in this case because if you run `env -i bash` it disables only partially.
+It will still have most things, but if you do `unset PATH` afterwards, will see the difference.
+Also this part is pretty much what you aren't required to handle.
+The main point is to not to crash/segfault when you launch without environment.
 
 ---
 
