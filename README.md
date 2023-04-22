@@ -38,6 +38,7 @@ Then redirect each of the output from stdin and strerror to a file otherwise you
 Base made by: [Tim](https://github.com/tjensen42) & [Hepple](https://github.com/hepple42)
 
 Upgraded by: [Zsolt](https://github.com/zstenger93)
+Parsing hell by: [Kārlis](https://github.com/kvebers)
 
 and
 
