@@ -49,6 +49,7 @@ main() {
 		echo "usage: mstest [m,vm,b,a]"
 		echo "m: mandatory tests"
 		echo "vm: mandatory tests with valgrind"
+		echo "ne: tests without environment"
 		echo "b: bonus tests"
 		echo "a: mandatory and bonus tests"
 
