@@ -39,6 +39,8 @@ Base made by: [Tim](https://github.com/tjensen42) & [Hepple](https://github.com/
 
 Upgraded by: [Zsolt](https://github.com/zstenger93)
 
+Parsing hell by: [Kārlis](https://github.com/kvebers)
+
 and
 
 ```
