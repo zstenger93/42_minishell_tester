@@ -217,3 +217,19 @@ echo $L
 export L=amazing L=lol L=cool
 export L=lol
 echo $L
+
+echo '$'$'$'$'$'
+
+echo '$'$'$'$'$'$'$'
+
+echo "$"$'$'$"$"$"$"$'$'
+
+echo $/ $/ 
+
+echo $U/SER
+
+echo "$/ $/"
+
+echo $/"$/"
+
+echo '$/'
