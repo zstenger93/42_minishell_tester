@@ -193,15 +193,15 @@ USER
 
 p""''''w''''''""""""''''''''''''''''''''''''''''''''d
 
-'''''''''''''''' echo lol
+'''''''''''''''' echo ok
 
-           ''echo lol
+           ''echo ok
 
-           ""echo lol
+           ""echo ok
 
-           ""echo"" lol
+           ""echo"" ok
 
-           ""'echo'"" lol
+           ""'echo'"" ok
 
 echo "         |       "  | echo maybe
 
@@ -211,11 +211,11 @@ echo '|'  | echo maybe
 
 echo -nnnnnnnnnnnn
 
-export L=amazing L=lol L=cool
+export L=amazing L=ok L=cool
 echo $L
 
-export L=amazing L=lol L=cool
-export L=lol
+export L=amazing L=ok L=cool
+export L=ok
 echo $L
 
 echo '$'$'$'$'$'
