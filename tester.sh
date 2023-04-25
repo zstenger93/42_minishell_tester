@@ -22,13 +22,13 @@ LEAKS=0
 
 main() {
 	if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then
-		echo -e "\033[0;31m# **************************************************************************** #"
+		echo -e "\033[1;31m# **************************************************************************** #"
 		echo "#                            MINISHELL NOT COMPILED                            #"
 		echo "#                              TRY TO COMPILE ...                              #"
 		echo -e "# **************************************************************************** #\033[m"
 		make -C $MINISHELL_PATH
 		if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then
-			echo -e "\033[0;31mCOMPILING FAILED\033[m" && exit 1
+			echo -e "\033[1;31mCOMPILING FAILED\033[m" && exit 1
 		fi
 	fi
 	if [[ $1 == "m" ]] ; then
@@ -94,39 +94,39 @@ test_bonus() {
 
 
 print_stats() {
-	echo -e "\033[0;33m# ============================================================================ #"
+	echo -e "\033[1;33m# ============================================================================ #"
 	echo "#                                    RESULT                                    #"
 	echo -e "# ============================================================================ #\033[m"
 	printf "\033[0;35m%-4s\033[m" "             TOTAL TEST COUNT: $TEST_COUNT "
-	printf "\033[0;32m TESTS PASSED: $GOOD_TEST\033[m "
+	printf "\033[1;32m TESTS PASSED: $GOOD_TEST\033[m "
 	if [[ $LEAKS == 0 ]] ; then
-		printf "\033[0;32m LEAKING: $LEAKS\033[m "
+		printf "\033[1;32m LEAKING: $LEAKS\033[m "
 	else
-		printf "\033[0;31m LEAKING: $LEAKS\033[m "
+		printf "\033[1;31m LEAKING: $LEAKS\033[m "
 	fi
 	echo ""
-	echo -ne "\033[0;34m                     STD_OUT:\033[m "
+	echo -ne "\033[1;34m                     STD_OUT:\033[m "
 	if [[ $TEST_KO_OUT == 0 ]] ; then
-		echo -ne "\033[0;32m✓ \033[m  "
+		echo -ne "\033[1;32m✓ \033[m  "
 	else
-		echo -ne "\033[0;31m$TEST_KO_OUT\033[m  "
+		echo -ne "\033[1;31m$TEST_KO_OUT\033[m  "
 	fi
-	echo -ne "\033[0;36mSTD_ERR:\033[m "
+	echo -ne "\033[1;36mSTD_ERR:\033[m "
 	if [[ $TEST_KO_ERR == 0 ]] ; then
-		echo -ne "\033[0;32m✓ \033[m  "
+		echo -ne "\033[1;32m✓ \033[m  "
 	else
-		echo -ne "\033[0;31m$TEST_KO_ERR\033[m  "
+		echo -ne "\033[1;31m$TEST_KO_ERR\033[m  "
 	fi
-	echo -ne "\033[0;36mEXIT_CODE:\033[m "
+	echo -ne "\033[1;36mEXIT_CODE:\033[m "
 	if [[ $TEST_KO_EXIT == 0 ]] ; then
-		echo -ne "\033[0;32m✓ \033[m  "
+		echo -ne "\033[1;32m✓ \033[m  "
 	else
-		echo -ne "\033[0;31m$TEST_KO_EXIT\033[m  "
+		echo -ne "\033[1;31m$TEST_KO_EXIT\033[m  "
 	fi
 	echo ""
-	echo -e "\033[0;33m                         TOTAL FAILED AND PASSED CASES:"
-	echo -e "\033[0;31m                                 FAILED: $FAILED \033[m  "
-	echo -ne "\033[0;32m                                 PASSED: $TEST_OK \033[m  "
+	echo -e "\033[1;33m                         TOTAL FAILED AND PASSED CASES:"
+	echo -e "\033[1;31m                                     ❌ $FAILED \033[m  "
+	echo -ne "\033[1;32m                                     ✅ $TEST_OK \033[m  "
 	echo ""
 }
 
@@ -142,9 +142,9 @@ test_from_file() {
 		((line_count++))
 		if [[ $line == \#* ]] || [[ $line == "" ]] ; then
 			# if [[ $line == "###"[[:blank:]]*[[:blank:]]"###" ]] ; then
-			# 	echo -e "\033[0;33m$line\033[m"
+			# 	echo -e "\033[1;33m$line\033[m"
 			if [[ $line == "#"[[:blank:]]*[[:blank:]]"#" ]] ; then
-				echo -e "\033[0;33m		$line\033[m" | tr '\t' '    '
+				echo -e "\033[1;33m		$line\033[m" | tr '\t' '    '
 			fi
 			continue
 		else
@@ -162,36 +162,36 @@ test_from_file() {
 			exit_minishell=$?
 			echo -n "enable -n .$NL$INPUT" | bash 2>tmp_err_bash >tmp_out_bash
 			exit_bash=$?
-			echo -ne "\033[0;34mSTD_OUT:\033[m "
+			echo -ne "\033[1;34mSTD_OUT:\033[m "
 			if ! diff -q tmp_out_minishell tmp_out_bash >/dev/null ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " | tr '\n' ' '
+				echo -ne "❌  " | tr '\n' ' '
 				((TEST_KO_OUT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((ONE++))
 			fi
-			echo -ne "\033[0;36mSTD_ERR:\033[m "
+			echo -ne "\033[1;33mSTD_ERR:\033[m "
 			if [[ -s tmp_err_minishell && ! -s tmp_err_bash ]] || [[ ! -s tmp_err_minishell && -s tmp_err_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " |  tr '\n' ' '
+				echo -ne "❌  " |  tr '\n' ' '
 				((TEST_KO_ERR++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((TWO++))
 			fi
-			echo -ne "\033[0;36mEXIT_CODE:\033[m "
+			echo -ne "\033[1;36mEXIT_CODE:\033[m "
 			if [[ $exit_minishell != $exit_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
+				echo -ne "❌\033[1;31m [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
 				((TEST_KO_EXIT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((THREE++))
 			fi
@@ -226,9 +226,9 @@ test_leaks() {
 		((line_count++))
 		if [[ $line == \#* ]] || [[ $line == "" ]] ; then
 			# if [[ $line == "###"[[:blank:]]*[[:blank:]]"###" ]] ; then
-			# 	echo -e "\033[0;33m$line\033[m"
+			# 	echo -e "\033[1;33m$line\033[m"
 			if [[ $line == "#"[[:blank:]]*[[:blank:]]"#" ]] ; then
-				echo -e "\033[0;33m		$line\033[m" | tr '\t' '    '
+				echo -e "\033[1;33m		$line\033[m" | tr '\t' '    '
 			fi
 			continue
 		else
@@ -246,40 +246,40 @@ test_leaks() {
 			exit_minishell=$?
 			echo -n "enable -n .$NL$INPUT" | bash 2>tmp_err_bash >tmp_out_bash
 			exit_bash=$?
-			echo -ne "\033[0;34mSTD_OUT:\033[m "
+			echo -ne "\033[1;34mSTD_OUT:\033[m "
 			if ! diff -q tmp_out_minishell tmp_out_bash >/dev/null ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " | tr '\n' ' '
+				echo -ne "❌  " | tr '\n' ' '
 				((TEST_KO_OUT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((ONE++))
 			fi
-			echo -ne "\033[0;36mSTD_ERR:\033[m "
+			echo -ne "\033[1;36mSTD_ERR:\033[m "
 			if [[ -s tmp_err_minishell && ! -s tmp_err_bash ]] || [[ ! -s tmp_err_minishell && -s tmp_err_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " |  tr '\n' ' '
+				echo -ne "❌  " |  tr '\n' ' '
 				((TEST_KO_ERR++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((TWO++))
 			fi
-			echo -ne "\033[0;36mEXIT_CODE:\033[m "
+			echo -ne "\033[1;36mEXIT_CODE:\033[m "
 			if [[ $exit_minishell != $exit_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
+				echo -ne "❌\033[1;31m [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
 				((TEST_KO_EXIT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((THREE++))
 			fi
-			echo -ne "\033[0;36mLEAKS:\033[m "
+			echo -ne "\033[1;36mLEAKS:\033[m "
 			echo -n "$INPUT" | valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=tmp_valgrind-out.txt $MINISHELL_PATH/$EXECUTABLE 2>/dev/null >/dev/null
 			# Get the number of bytes lost
 			definitely_lost=$(cat tmp_valgrind-out.txt | grep "definitely lost:" | awk 'END{print $4}')
@@ -291,10 +291,10 @@ test_leaks() {
 			# Check if any bytes were lost
 			if [ "$definitely_lost" != "0" ] || [ "$possibly_lost" != "0" ] || [ "$indirectly_lost" != "0" ];
 			then
-				echo -ne "\033[0;31mKO\033[m "
+				echo -ne "❌ "
 				((LEAKS++))
 			else
-				echo -ne "\033[0;32mOK\033[m "
+				echo -ne "✅ "
 			fi
 			INPUT=""
 			((i++))
@@ -327,9 +327,9 @@ test_without_env() {
 		((line_count++))
 		if [[ $line == \#* ]] || [[ $line == "" ]] ; then
 			# if [[ $line == "###"[[:blank:]]*[[:blank:]]"###" ]] ; then
-			# 	echo -e "\033[0;33m$line\033[m"
+			# 	echo -e "\033[1;33m$line\033[m"
 			if [[ $line == "#"[[:blank:]]*[[:blank:]]"#" ]] ; then
-				echo -e "\033[0;33m		$line\033[m" | tr '\t' '    '
+				echo -e "\033[1;33m		$line\033[m" | tr '\t' '    '
 			fi
 			continue
 		else
@@ -347,36 +347,36 @@ test_without_env() {
 			exit_minishell=$?
 			echo -n "enable -n .$NL$INPUT" | env -i bash 2>tmp_err_bash >tmp_out_bash
 			exit_bash=$?
-			echo -ne "\033[0;34mSTD_OUT:\033[m "
+			echo -ne "\033[1;34mSTD_OUT:\033[m "
 			if ! diff -q tmp_out_minishell tmp_out_bash >/dev/null ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " | tr '\n' ' '
+				echo -ne "❌  " | tr '\n' ' '
 				((TEST_KO_OUT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((ONE++))
 			fi
-			echo -ne "\033[0;36mSTD_ERR:\033[m "
+			echo -ne "\033[1;36mSTD_ERR:\033[m "
 			if [[ -s tmp_err_minishell && ! -s tmp_err_bash ]] || [[ ! -s tmp_err_minishell && -s tmp_err_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO\033[m  " |  tr '\n' ' '
+				echo -ne "❌  " |  tr '\n' ' '
 				((TEST_KO_ERR++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((TWO++))
 			fi
-			echo -ne "\033[0;36mEXIT_CODE:\033[m "
+			echo -ne "\033[1;36mEXIT_CODE:\033[m "
 			if [[ $exit_minishell != $exit_bash ]] ;
 			then
-				echo -ne "\033[0;31mKO [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
+				echo -ne "❌\033[1;31m [ minishell($exit_minishell)  bash($exit_bash) ]\033[m  " | tr '\n' ' '
 				((TEST_KO_EXIT++))
 				((FAILED++))
 			else
-				echo -ne "\033[0;32mOK\033[m  "
+				echo -ne "✅  "
 				((TEST_OK++))
 				((THREE++))
 			fi
