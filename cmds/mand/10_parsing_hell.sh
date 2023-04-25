@@ -301,4 +301,4 @@ exit 123"123"
 
 cd --
 
-echo <"<<<"<< amazing
+echo <"<<<"<< Segfault
