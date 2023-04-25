@@ -2,6 +2,17 @@
 #                                PARSING HELL                                  #
 # **************************************************************************** #
 
+">>" asd
+
+>">" asd
+/bin/rm -f ">"
+
+>> '$USER'
+cat $USER
+
+>> '$USER'
+cat '$USER'
+
 "echo "
 
 "echo -nnnnn"
@@ -21,6 +32,9 @@ why
 not
 $USER
 
+export T=">>"
+$T lol
+
 cat << "$USER"
 why
 not
@@ -37,6 +51,7 @@ $USER
 
 >> "$H"OM"E"
 cat OME
+/bin/rm -f OME
 
 >> "$USER'$USER'"
 cat "$USER'$USER'"
@@ -151,6 +166,12 @@ pWD
 pwd
 
 pwD
+
+ENV
+
+CAT
+
+EXPORT
 
 export T="|"
 echo segfault $T grep segfault
