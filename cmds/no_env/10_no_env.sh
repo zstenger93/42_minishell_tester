@@ -1,12 +1,16 @@
-# **************************************************************************** #
-#                                NO ENVIRONMENT                                #
-# **************************************************************************** #
-
 unset PATH
 ls
 
 unset PATH
 env
+
+env
+
+export
+
+echo $USER
+
+echo $HOME
 
 echo $HOME$NOTHING$USER$
 
@@ -33,6 +37,15 @@ exit 5 asd
 unset OLDPWD
 cd -
 pwd
+
+cd
+cd ~
+
+/bin/ls
+
+cd /bin/
+./ls
+ls
 
 export T=bazd
 echo "$T" "meg"
@@ -133,6 +146,10 @@ pwd
 /bin/rm -f out
 
 |
+
+""
+
+''
 
 >> out
 /bin/rm -f out

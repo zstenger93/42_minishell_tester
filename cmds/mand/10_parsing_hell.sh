@@ -2,6 +2,17 @@
 #                                PARSING HELL                                  #
 # **************************************************************************** #
 
+">>" asd
+
+>">" asd
+/bin/rm -f ">"
+
+>> '$USER'
+cat $USER
+
+>> '$USER'
+cat '$USER'
+
 "echo "
 
 "echo -nnnnn"
@@ -15,6 +26,46 @@ ECHO '''''-''n'
 echo '' -n
 
 echo "" "" "" -n -n -n -n
+
+cat << $USER
+why
+not
+$USER
+
+export T=">>"
+$T lol
+
+cat << "$USER"
+why
+not
+$USER
+
+cat << "$US"E"R"
+because
+we
+love
+bash
+$USER
+
+>> $HOME
+
+>> "$H"OM"E"
+cat OME
+/bin/rm -f OME
+
+>> "$USER'$USER'"
+cat "$USER'$USER'"
+
+>> '$USER'
+cat $USER
+
+cd /Users/$USER/Desktop/
+pwd
+
+cd /Users/"$USER"/Desktop/
+pwd
+
+cd /Users/"$U"S"ER"/Desktop/
 
 export T=n
 echo "-"$T$T
@@ -115,6 +166,12 @@ pWD
 pwd
 
 pwD
+
+ENV
+
+CAT
+
+EXPORT
 
 export T="|"
 echo segfault $T grep segfault
@@ -242,3 +299,4 @@ exit 123"123"
 
 >| echo sure
 
+cd --
