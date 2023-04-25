@@ -1,7 +1,6 @@
 
 <h1 align=center>📖 42_minishell_tester</h1>
-<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/result.png">
-<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/leakcheck.png">
+<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/tester.png">
 
 ---
 
