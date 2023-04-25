@@ -16,17 +16,17 @@ echo '' -n
 
 echo "" "" "" -n -n -n -n
 
-<< $USER
+cat << $USER
 why
 not
 $USER
 
-<< "$USER"
+cat << "$USER"
 why
 not
 $USER
 
-<< "$US"E"R"
+cat << "$US"E"R"
 because
 we
 love
