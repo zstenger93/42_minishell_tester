@@ -16,6 +16,34 @@ echo '' -n
 
 echo "" "" "" -n -n -n -n
 
+<< $USER
+why
+not
+$USER
+
+<< "$USER"
+why
+not
+$USER
+
+<< "$US"E"R"
+because
+we
+love
+bash
+$USER
+
+>> $HOME
+
+>> "$H"OM"E"
+cat OME
+
+>> "$USER'$USER'"
+cat "$USER'$USER'"
+
+>> '$USER'
+cat $USER
+
 export T=n
 echo "-"$T$T
 
