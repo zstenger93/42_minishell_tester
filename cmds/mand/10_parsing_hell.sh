@@ -44,6 +44,14 @@ cat "$USER'$USER'"
 >> '$USER'
 cat $USER
 
+cd /Users/$USER/Desktop/
+pwd
+
+cd /Users/"$USER"/Desktop/
+pwd
+
+cd /Users/"$U"S"ER"/Desktop/
+
 export T=n
 echo "-"$T$T
 
