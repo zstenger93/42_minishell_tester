@@ -2,9 +2,25 @@
 <h1 align=center>📖 42_minishell_tester</h1>
 <img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/tester.png">
 
+# Menu
+
+[Updates](#updates)
+
+[Disclaimer](#disclaimer)
+
+[Contributors](#the-people-made-this-tester-possible)
+
+[Install & Run](#how-to-install-and-run)
+
+[Setup](#setup)
+
+[Usage](#how-to-launch-the-tester)
+
+[Options](#options)
+
 ---
 
-<h1>Updates</h1>
+# Updates
 Tests without environment now are updated, separated and can be run with:
 
 ```bash
@@ -19,20 +35,20 @@ The main point is to not to crash/segfault when you launch without environment.
 
 ---
 
-<h1>Disclaimer</h1>
+# Disclaimer
 Don't trust 100% the leak check, try it yourself as well and the linked tester below
 Try to write your own test first and don't just run a tester mindlessly
 You don't have to pass all the cases in this tester
 If you want to check leaks outside of your manual checking:
 
-[This is good one to check valgrind](https://github.com/thallard/minishell_tester)
+[This is also a good one to check valgrind](https://github.com/thallard/minishell_tester)
 A bit more time to set it up, but worth it
 The first time if you run the tester above and expect a lot of errors
 Then redirect each of the output from stdin and strerror to a file otherwise you won't be able see all of the errors
 
 ---
 
-<h1>The people made this tester possible</h1>
+# The People Made This Tester Possible
 
 Base made by: [Tim](https://github.com/tjensen42) & [Hepple](https://github.com/hepple42)
 
@@ -47,7 +63,7 @@ My minishell pain
 ```
 ---
 
-<h1>How To Install and run</h1>
+# How To Install and Run
 
 To install the script, copy and run following command:
 
@@ -67,7 +83,7 @@ mstest
 
 ---
 
-<h1>How To Use</h1>
+# Setup
 First you should comment out everything what prints to terminal eg "exit" at exit, printf's for debugging etc
 Then modify your main loop:
 You should only read with readline and use your own prompt when you launch the program by yourself typing ./minihsell into the terminal, you can check it this way:
@@ -105,10 +121,10 @@ I think from this you pretty much can figure it out, it isn't a big change :)
 
 ---
 
-<h1>How to launch the tester</h1>
+# How To Launch The Tester
 Clone it to the root of your minishell
 cd to the testers folder
-<h2>OPTIONS</h2>
+## Options
 
 ```bash
 bash tester.sh m
