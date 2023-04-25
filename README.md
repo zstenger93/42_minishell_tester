@@ -47,7 +47,7 @@ The first time if you run the tester above and expect a lot of errors
 Then redirect each of the output from stdin and strerror to a file otherwise you won't be able see all of the errors
 
 Even though the required changes have been made to your proram, it might still going to throw you only KO STD_OUT.
-This is because readline version. (then you probably have the older version when it still not working and it isn't checking where does the input coming from)
+This is because readline version. (then you probably have the older version where it isn't checking where does the input coming from(the tester or you))
 
 ---
 
