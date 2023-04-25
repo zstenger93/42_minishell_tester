@@ -94,10 +94,10 @@ test_bonus() {
 
 
 print_stats() {
-	echo -e "\033[1;33m# ============================================================================ #"
-	echo "#                                    RESULT                                    #"
-	echo -e "# ============================================================================ #\033[m"
-	printf "\033[0;35m%-4s\033[m" "             TOTAL TEST COUNT: $TEST_COUNT "
+	echo "🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁"
+	echo -e "🏁                                    \033[1;31mRESULT\033[m                                    🏁"
+	echo "🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁🏁"
+	printf "\033[1;35m%-4s\033[m" "             TOTAL TEST COUNT: $TEST_COUNT "
 	printf "\033[1;32m TESTS PASSED: $GOOD_TEST\033[m "
 	if [[ $LEAKS == 0 ]] ; then
 		printf "\033[1;32m LEAKING: $LEAKS\033[m "
@@ -148,7 +148,7 @@ test_from_file() {
 			fi
 			continue
 		else
-			printf "\033[0;35m%-4s\033[m" "  $i:	"
+			printf "\033[1;35m%-4s\033[m" "  $i:	"
 			tmp_line_count=$line_count
 			while [[ $end_of_file == 0 ]] && [[ $line != \#* ]] && [[ $line != "" ]] ;
 			do
