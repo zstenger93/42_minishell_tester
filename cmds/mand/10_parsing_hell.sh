@@ -9,9 +9,11 @@
 
 >> '$USER'
 cat $USER
+/bin/rm -f '$USER'
 
 >> '$USER'
 cat '$USER'
+/bin/rm -f '$USER'
 
 "echo "
 
@@ -55,9 +57,11 @@ cat OME
 
 >> "$USER'$USER'"
 cat "$USER'$USER'"
+/bin/rm -f "$USER'$USER'"
 
->> '$USER'
+>> "$USER"
 cat $USER
+/bin/rm -f $USER
 
 cd /Users/$USER/Desktop/
 pwd
@@ -301,4 +305,38 @@ exit 123"123"
 
 cd --
 
-echo <"<<<"<< Segfault
+echo seg <> echo seg
+
+echo seg >< echo segf
+
+echo seg <<> echo segf
+
+echo seg <<<> echo segf
+
+echo <<< echo seegf
+
+echo |< echo segf
+
+echo segf >| echo is this invalid
+
+echo segf <|< echo super valid
+
+echo >>< "echo"
+
+echo >>| echo kekw
+
+echo >>| echo super valid
+
+echo <<> echo
+
+echo <<<> ok
+
+echo <<| echo ok
+
+echo <<|< ok
+
+echo <<|> echo
+
+echo segfault <"<<<"<<amazing
+.
+amazing
