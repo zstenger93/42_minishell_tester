@@ -36,6 +36,15 @@ The main point is to not to crash/segfault when you launch without environment.
 ---
 
 # Disclaimer
+
+DO NOT FAIL SOMEONE BECAUSE THEY AREN'T PASSING ALL TESTS!
+
+NEITHER LET THEM PASS JUST BECAUSE THEY DO, CHECK THE CODE WELL!
+
+DO YOUR OWN TESTING. TRY TO BREAK IT! ^^
+
+HAVE FUN WITH YOUR BEAUTIFUL MINISHELL
+
 Don't trust 100% the leak check, try it yourself as well and the linked tester below
 Try to write your own test first and don't just run a tester mindlessly
 You don't have to pass all the cases in this tester
