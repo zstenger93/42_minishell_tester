@@ -22,7 +22,7 @@ touch "
 "
 
 mkdir " "
-/bin/rm -f " "
+/bin/rm -rf " "
 
 asd
 expr $? + $?
