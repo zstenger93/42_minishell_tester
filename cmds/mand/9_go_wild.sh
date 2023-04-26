@@ -58,4 +58,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet orci ne
 
 # this is my ananas.jpeg
 # leave it alone
-/bin/rm -rf echo
+/bin/rm -rf test
