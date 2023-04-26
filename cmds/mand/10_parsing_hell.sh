@@ -9,9 +9,11 @@
 
 >> '$USER'
 cat $USER
+/bin/rm -f '$USER'
 
 >> '$USER'
 cat '$USER'
+/bin/rm -f '$USER'
 
 "echo "
 
@@ -55,9 +57,11 @@ cat OME
 
 >> "$USER'$USER'"
 cat "$USER'$USER'"
+/bin/rm -f "$USER'$USER'"
 
->> '$USER'
+>> "$USER"
 cat $USER
+/bin/rm -f $USER
 
 cd /Users/$USER/Desktop/
 pwd

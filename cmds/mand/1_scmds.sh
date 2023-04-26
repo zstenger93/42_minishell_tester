@@ -13,13 +13,16 @@ cat cmds.sh
 touch ""
 
 touch "  "
+/bin/rm -f "  "
 
-touch "		"
 
 touch "
 "
+/bin/rm -f "
+"
 
 mkdir " "
+/bin/rm -f " "
 
 asd
 expr $? + $?
