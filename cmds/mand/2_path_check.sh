@@ -29,6 +29,9 @@ cd .
 
 cd ~
 
+cd ~/Desktop/
+pwd
+
 export PATH=
 echo $PATH
 echo 1
