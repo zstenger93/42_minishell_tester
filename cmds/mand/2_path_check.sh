@@ -62,3 +62,8 @@ echo $?
 echo $?
 echo 42
 /bin/rm -f tmp_x_file1
+
+cd doesntexist
+
+export PATH=""
+ls
