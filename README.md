@@ -49,6 +49,8 @@ Then redirect each of the output from stdin and strerror to a file otherwise you
 Even though the required changes have been made to your proram, it might still going to throw you only KO STD_OUT.
 This is because readline version. (then you probably have the older version where it isn't checking where does the input coming from(the tester or you))
 
+If a test just hanging in infinite loop, you can use the link to go there and comment it out in the test file until you fix it.
+
 ---
 
 # The People Made This Tester Possible
