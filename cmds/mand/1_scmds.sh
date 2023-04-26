@@ -10,6 +10,17 @@ cat cmds.sh
 
 ""
 
+touch ""
+
+touch "  "
+
+touch "		"
+
+touch "
+"
+
+mkdir " "
+
 asd
 expr $? + $?
 
