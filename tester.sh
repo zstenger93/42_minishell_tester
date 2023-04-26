@@ -54,6 +54,11 @@ main() {
 	elif [[ $1 == "a" ]] ; then
 		test_mandatory
 		test_bonus
+	elif [[ $1 == "d" ]] ; then
+		echo "  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀"
+		echo -e "  🚀                                  \033[1;34mMINI_DEATH\033[m                                🚀"
+		echo "  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀"
+		test_mini_death
 	elif [[ $1 == "-f" ]] ; then
 		[[ ! -f $2 ]] && echo "\"$2\" FILE NOT FOUND"
 		[[ -f $2 ]] && test_from_file $2
@@ -64,6 +69,7 @@ main() {
 		echo "ne: tests without environment"
 		echo "b: bonus tests"
 		echo "a: mandatory and bonus tests"
+		echo "d: mandatory pipe segfault test (BRUTAL)"
 
 	fi
 	if [[ $TEST_COUNT -gt 0 ]] ; then
@@ -89,6 +95,14 @@ test_mandatory_leaks() {
 
 test_mandatory() {
 	FILES="${RUNDIR}/cmds/mand/*"
+	for file in $FILES
+	do
+		test_from_file $file
+	done
+}
+
+test_mini_death() {
+	FILES="${RUNDIR}/cmds/mini_death/*"
 	for file in $FILES
 	do
 		test_from_file $file
