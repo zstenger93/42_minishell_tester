@@ -2,6 +2,12 @@
 #                                     WILD                                     #
 # **************************************************************************** #
 
+ls | wc -l | xargs echo
+
+yes "no" | head -n 10
+
+/bin/echo -e "\033[33mHello, world!\033[0m"
+
 /bin/echo '\1$42' > tmp_redir_out
 ls -la | grep tmp_redir_out | awk '{print $1 $2}'
 cat -e tmp_redir_out
