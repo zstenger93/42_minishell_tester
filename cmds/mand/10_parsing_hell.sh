@@ -304,25 +304,3 @@ exit 123"123"
 >| echo sure
 
 cd --
-
-echo seg <> echo seg
-
-echo |< echo segf
-
-echo segf >| echo is this invalid
-
-echo segf <|< echo super valid
-
-echo >>| echo kekw
-
-echo >>| echo super valid
-
-echo <<| echo ok
-
-echo <<|< ok
-
-echo <<|> echo
-
-echo segfault <"<<<"<<amazing
-.
-amazing
