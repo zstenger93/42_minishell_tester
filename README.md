@@ -36,6 +36,15 @@ The main point is to not to crash/segfault when you launch without environment.
 ---
 
 # Disclaimer
+
+DO NOT FAIL SOMEONE BECAUSE THEY AREN'T PASSING ALL TESTS!
+
+NEITHER LET THEM PASS JUST BECAUSE THEY DO, CHECK THE CODE WELL!
+
+DO YOUR OWN TESTING. TRY TO BREAK IT! ^^
+
+HAVE FUN WITH YOUR BEAUTIFUL MINISHELL
+
 Don't trust 100% the leak check, try it yourself as well and the linked tester below
 Try to write your own test first and don't just run a tester mindlessly
 You don't have to pass all the cases in this tester
@@ -48,6 +57,8 @@ Then redirect each of the output from stdin and strerror to a file otherwise you
 
 Even though the required changes have been made to your proram, it might still going to throw you only KO STD_OUT.
 This is because readline version. (then you probably have the older version where it isn't checking where does the input coming from(the tester or you))
+
+If a test just hanging in infinite loop, you can use the link to go there and comment it out in the test file until you fix it.
 
 ---
 

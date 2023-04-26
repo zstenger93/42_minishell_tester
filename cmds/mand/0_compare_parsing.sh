@@ -33,8 +33,6 @@
 
 /bin/echo $"42$"
 
-/bin/echo """"""""$USER""""""""
-
 /bin/echo "$ "
 
 /bin/echo hi >./outfiles/outfile01 | /bin/echo bye
@@ -91,6 +89,20 @@
 
 /bin/echo """"""""$USER""""""""
 
+/bin/echo '""""""""$USER""""""""'
+
+/bin/echo ""'""""""$USER""""""'""
+
+/bin/echo """"""""'$USER'""""""""
+
+/bin/echo """""""'"$USER"'"""""""
+
+/bin/echo """"""'""$USER""'""""""
+
+/bin/echo ""'""'""""$USER""""'""'""
+
+/bin/echo '""'""'""""$USER""""'""'""'
+
 /bin/echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
 
 /bin/echo "text" "text$USER" ... "$USER"
@@ -124,7 +136,6 @@
 /bin/echo $USER$TESTNOTFOUND$HOME$
 
 /bin/echo $USER$TESTNOTFOUND$HOME$WTF$PWD
-
 
 /bin/echo -n test1
 

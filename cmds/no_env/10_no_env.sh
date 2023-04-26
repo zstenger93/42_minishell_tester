@@ -95,9 +95,9 @@ pwd
 
 /bin/cat Makefile > out >>out1 >out2
 /bin/cat Makefile > out >>out1 >out2
-/bin/rm -f out
-/bin/rm -f out1
-/bin/rm -f out2
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
 
 /bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3
 asdsada
@@ -108,42 +108,42 @@ stop
 123
 12
 stop
-/bin/rm -f out
-/bin/rm -f out1
-/bin/rm -f out2
-/bin/rm -f out3
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
 
 /bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3 | /bin/ls
 testinator
 stop
-/bin/rm -f out
-/bin/rm -f out1
-/bin/rm -f out2
-/bin/rm -f out3
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
 
 /bin/cat Makefile > out >>out1 >out2 | /bin/cat << stop > out3 | /bin/ls > > | /bin/cat << file
 will make you cry
 stop
-/bin/rm -f out
-/bin/rm -f out1
-/bin/rm -f out2
-/bin/rm -f out3
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
 cd ..
 pwd
 
 /bin/cat Makefile > out >>out1 >out2 > out3 >> out4
 /bin/cat Makefile > out >>out1 >out2 > out3 >> out4
-/bin/rm -f out
-/bin/rm -f out1
-/bin/rm -f out2
-/bin/rm -f out3
-/bin/rm -f out4
+/bin/rm -rf out
+/bin/rm -rf out1
+/bin/rm -rf out2
+/bin/rm -rf out3
+/bin/rm -rf out4
 
 > out
-/bin/rm -f out
+/bin/rm -rf out
 
 < out
-/bin/rm -f out
+/bin/rm -rf out
 
 |
 
@@ -152,7 +152,7 @@ pwd
 ''
 
 >> out
-/bin/rm -f out
+/bin/rm -rf out
 
 << out
 where

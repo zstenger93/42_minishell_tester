@@ -92,3 +92,20 @@ wtf
 hi im zsolt
 nice to meet you if these tests are green
 your minishell is perfect
+
+<<| echo wtf
+
+>>| echo wtf
+
+>| echo wtf
+/bin/rm -rf echo
+
+<| echo wtf
+
+echo "<<| echo wtf"
+
+echo ">>| echo wtf"
+
+echo ">| echo wtf"
+
+echo "<| echo wtf"
