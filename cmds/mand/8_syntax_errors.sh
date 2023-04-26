@@ -98,6 +98,7 @@ your minishell is perfect
 >>| echo wtf
 
 >| echo wtf
+/bin/rm -rf echo
 
 <| echo wtf
 
