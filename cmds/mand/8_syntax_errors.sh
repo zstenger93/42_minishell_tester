@@ -100,3 +100,11 @@ your minishell is perfect
 >| echo wtf
 
 <| echo wtf
+
+echo "<<| echo wtf"
+
+echo ">>| echo wtf"
+
+echo ">| echo wtf"
+
+echo "<| echo wtf"
