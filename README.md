@@ -82,7 +82,7 @@ My minishell pain
 To install the script, copy and run following command:
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_tester/main/install.sh)" 
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_tester/master/install.sh)" 
 ```
 
 The tester will be installed in the `$HOME/42_minishell_tester` directory.
