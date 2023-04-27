@@ -1,6 +1,6 @@
 
 <h1 align=center>📖 42_minishell_tester</h1>
-<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/main/tester.png">
+<img align=center src="https://github.com/zstenger93/42_minishell_tester/blob/master/tester.png">
 
 # Menu
 
