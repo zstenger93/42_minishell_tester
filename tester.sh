@@ -75,6 +75,7 @@ main() {
 	if [[ $TEST_COUNT -gt 0 ]] ; then
 		print_stats
 	fi
+	rm -rf test
 }
 
 test_no_env() {
