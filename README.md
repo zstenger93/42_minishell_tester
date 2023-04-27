@@ -68,7 +68,7 @@ Base made by: [Tim](https://github.com/tjensen42) & [Hepple](https://github.com/
 
 Upgraded by: [Zsolt](https://github.com/zstenger93)
 
-Parsing hell by: [Kārlis](https://github.com/kvebers)
+Parsing hell and mini_death by: [Kārlis](https://github.com/kvebers)
 
 and
 
@@ -148,6 +148,9 @@ bash tester.sh vm
 ```
 ```bash
 bash tester.sh ne
+```
+```bash
+bash tester.sh d
 ```
 ```bash
 bash tester.sh b
