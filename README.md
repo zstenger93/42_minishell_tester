@@ -161,6 +161,9 @@ bash tester.sh a
 
 ---
 
+Later on I might make changes so you can run test for each part like cd, echo, pipes, redirs etc.. as well
+Or if someone takes on the challenge, you are welcome to do so.
+
 Feel free to ask on slack if you have a question
 Or open a pull request if you would like to add more tests
 Looking for people who would like to add more tests to the bonus part, because we haven't done it

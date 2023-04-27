@@ -75,6 +75,8 @@ main() {
 	if [[ $TEST_COUNT -gt 0 ]] ; then
 		print_stats
 	fi
+	# \_o_/ this is my ananas.jpeg \_o_/
+	rm -rf test
 }
 
 test_no_env() {
