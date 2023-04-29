@@ -95,14 +95,14 @@ echo segfault <"    <   <   <"  <   <   amazing
 .
 amazing
 
-echo seg <> echo seg
+echo seg <  > echo seg
 
-echo seg >< echo segf
+echo seg >  < echo segf
 
-echo seg <<> echo segf
+echo seg <  <   > echo segf
 
-echo seg <<<> echo segf
+echo seg <  <   <   > echo segf
 
-echo <<< echo seegf
+echo <  < < echo seegf
 
-echo segf <|< echo super valid
+echo segf < |    < echo super valid
