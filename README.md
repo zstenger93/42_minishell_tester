@@ -155,6 +155,8 @@ Upgraded by: [Zsolt](https://github.com/zstenger93)
 
 Parsing hell and mini_death by: [Kārlis](https://github.com/kvebers)
 
+Extra bonus tests by: [Mouad](https://github.com/moabid42)
+
 and
 
 ```
