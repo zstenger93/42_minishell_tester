@@ -15,3 +15,4 @@ echo 1 | (grep 1) | cat | (wc -l)
 (sleep 0 && (exit 4))
 
 (echo 1 | echo 2) | (exit 2)
+
