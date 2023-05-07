@@ -4,19 +4,104 @@
 
 # Menu
 
+[Setup](#setup)
+
+[Usage](#how-to-launch-the-tester)
+
+[Options](#options)
+
+[Install & Run](#how-to-install-and-run)
+
 [Updates](#updates)
 
 [Disclaimer](#disclaimer)
 
 [Contributors](#the-people-made-this-tester-possible)
 
-[Install & Run](#how-to-install-and-run)
+---
 
-[Setup](#setup)
+# Setup
+First you should comment out everything what prints to terminal eg "exit" at exit, printf's for debugging etc
+Then modify your main loop:
+You should only read with readline and use your own prompt when you launch the program by yourself typing ./minihsell into the terminal, you can check it this way:
 
-[Usage](#how-to-launch-the-tester)
 
-[Options](#options)
+```c
+	if (isatty(fileno(stdin)))
+		shell->prompt = readline(shell->terminal_prompt);
+```
+
+Else if it is opened by another program/tester for example then use gnl as follows
+
+```c
+	char *line;
+	line = get_next_line(fileno(stdin));
+	shell->prompt = ft_strtrim(line, "\n");
+	free(line);
+```
+
+So it should look like something like this:
+
+```c
+	if (isatty(fileno(stdin)))
+		shell->prompt = readline(shell->terminal_prompt);
+	else
+	{
+		char *line;
+		line = get_next_line(fileno(stdin));
+		shell->prompt = ft_strtrim(line, "\n");
+		free(line);
+	}
+```
+
+I think from this you pretty much can figure it out, it isn't a big change :)
+
+---
+
+# How To Launch The Tester
+Clone it to the root of your minishell
+
+cd to the testers folder
+## Options
+
+```bash
+bash tester.sh m
+```
+```bash
+bash tester.sh vm
+```
+```bash
+bash tester.sh ne
+```
+```bash
+bash tester.sh d
+```
+```bash
+bash tester.sh b
+```
+```bash
+bash tester.sh a
+```
+
+---
+
+# How To Install and Run
+
+To install the script, copy and run following command:
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_tester/master/install.sh)" 
+```
+
+The tester will be installed in the `$HOME/42_minishell_tester` directory.
+
+After installation an alias `mstest` will be automaticly added in `.zshrc` or `.bashrc`
+
+So that you can run the program in any directory (where your minishell is) by calling
+
+```
+mstest
+```
 
 ---
 
@@ -75,90 +160,6 @@ and
 ```
 My minishell pain
 ```
----
-
-# How To Install and Run
-
-To install the script, copy and run following command:
-
-```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/zstenger93/42_minishell_tester/master/install.sh)" 
-```
-
-The tester will be installed in the `$HOME/42_minishell_tester` directory.
-
-After installation an alias `mstest` will be automaticly added in `.zshrc` or `.bashrc`
-
-So that you can run the program in any directory (where your minishell is) by calling
-
-```
-mstest
-```
-
----
-
-# Setup
-First you should comment out everything what prints to terminal eg "exit" at exit, printf's for debugging etc
-Then modify your main loop:
-You should only read with readline and use your own prompt when you launch the program by yourself typing ./minihsell into the terminal, you can check it this way:
-
-
-```c
-	if (isatty(fileno(stdin)))
-		shell->prompt = readline(shell->terminal_prompt);
-```
-
-Else if it is opened by another program/tester for example then use gnl as follows
-
-```c
-	char *line;
-	line = get_next_line(fileno(stdin));
-	shell->prompt = ft_strtrim(line, "\n");
-	free(line);
-```
-
-So it should look like something like this:
-
-```c
-	if (isatty(fileno(stdin)))
-		shell->prompt = readline(shell->terminal_prompt);
-	else
-	{
-		char *line;
-		line = get_next_line(fileno(stdin));
-		shell->prompt = ft_strtrim(line, "\n");
-		free(line);
-	}
-```
-
-I think from this you pretty much can figure it out, it isn't a big change :)
-
----
-
-# How To Launch The Tester
-Clone it to the root of your minishell
-cd to the testers folder
-## Options
-
-```bash
-bash tester.sh m
-```
-```bash
-bash tester.sh vm
-```
-```bash
-bash tester.sh ne
-```
-```bash
-bash tester.sh d
-```
-```bash
-bash tester.sh b
-```
-```bash
-bash tester.sh a
-```
-
 ---
 
 Later on I might make changes so you can run test for each part like cd, echo, pipes, redirs etc.. as well
