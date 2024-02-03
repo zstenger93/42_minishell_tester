@@ -19,3 +19,7 @@ rm -f tmp_out
 /bin/echo 42 | /bin/echo 42 || (/bin/echo 42)
 
 /bin/echo 42 | /bin/echo 42 && (/bin/echo 42)
+
+export bla='||' || echo 42 && echo 43
+
+export or='||' && export and='&&' && echo 42 $and echo 43 $or echo 43
