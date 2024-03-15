@@ -156,6 +156,8 @@ $T$E"C"$L -nn
 export T=e E=c S=h L=o
 $T$E"C"$L "" -""n
 
+$NOVAR
+
 export T="s"
 l$T
 
