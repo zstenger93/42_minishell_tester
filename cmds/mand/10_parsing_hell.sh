@@ -63,13 +63,14 @@ cat "$USER'$USER'"
 cat $USER
 /bin/rm -f $USER
 
-cd /Users/$USER/Desktop/
+cd /home/$USER/Desktop/
 pwd
 
-cd /Users/"$USER"/Desktop/
+cd /home/"$USER"/Desktop/
 pwd
 
-cd /Users/"$U"S"ER"/Desktop/
+cd /home/"$U"S"ER"/Desktop/
+echo $?
 
 export T=n
 echo "-"$T$T
@@ -154,6 +155,18 @@ $T$E"C"$L -nn
 
 export T=e E=c S=h L=o
 $T$E"C"$L "" -""n
+
+export T="s"
+l$T
+
+export T="s"
+l$T -la
+
+export T="l"
+$Ts
+
+export T="l"
+$Ts -la
 
 LS
 
