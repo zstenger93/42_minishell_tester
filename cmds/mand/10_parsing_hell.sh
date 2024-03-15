@@ -160,13 +160,13 @@ export T="s"
 l$T
 
 export T="s"
-l$T -la
+l$T -a
 
 export T="l"
 $Ts
 
 export T="l"
-$Ts -la
+$Ts -a
 
 LS
 
