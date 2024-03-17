@@ -1,11 +1,6 @@
 unset PATH
 ls
 
-unset PATH
-env
-
-env
-
 export
 
 echo $USER
