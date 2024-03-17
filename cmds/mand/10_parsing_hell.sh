@@ -63,13 +63,13 @@ cat "$USER'$USER'"
 cat $USER
 /bin/rm -f $USER
 
-cd /home/$USER/Desktop/
+cd $HOME/Desktop/
 pwd
 
-cd /home/"$USER"/Desktop/
+cd "$HOME"/Desktop/
 pwd
 
-cd /home/"$U"S"ER"/Desktop/
+cd "$H"O"ME"/Desktop/
 echo $?
 
 export T=n
