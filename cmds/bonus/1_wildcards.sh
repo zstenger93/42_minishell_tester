@@ -62,3 +62,8 @@ touch tmp_out1
 touch tmp_out2
 /bin/echo 42 >tmp_out*
 rm -f "tmp_out*"
+
+export test=" * "
+touch "$USER * ?eHallo"
+/bin/echo "$USER "*" ?e"*
+rm -f "$USER * ?eHallo"

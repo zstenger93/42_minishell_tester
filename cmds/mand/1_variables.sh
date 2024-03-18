@@ -32,6 +32,9 @@ unset o a X b c
 export a="asd" b="de" o= c="hellomi" X
 unset o asd B x X wqd c
 
+export T=a T=b T=c
+echo $T
+
 export miert ne lehetne ezt is
 
 /bin/echo $"HOME"$USER
@@ -168,8 +171,3 @@ export X="  A  B  "
 
 export X="  A  B  "
 /bin/echo "1"$X2?
-
-export test=" * "
-touch "$USER * ?eHallo"
-/bin/echo "$USER "*" ?e"*
-rm -f "$USER * ?eHallo"

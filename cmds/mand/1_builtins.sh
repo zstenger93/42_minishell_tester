@@ -149,6 +149,9 @@ echo -n -n test1
 
 echo -n -n -n -n -n test1
 
+echo -
+echo --
+
 echo "  -nn "
 
 echo "-n test1 -n test2"
