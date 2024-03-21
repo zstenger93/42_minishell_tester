@@ -315,7 +315,3 @@ exit 9223372036854775805
 exit 123"123"
 
 <| echo ok
-
->| echo sure
-
-cd --
