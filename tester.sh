@@ -59,18 +59,29 @@ main() {
 		echo -e "  🚀                                  \033[1;34mMINI_DEATH\033[m                                🚀"
 		echo "  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀"
 		test_mini_death
+	elif [[ $1 == "x" ]] ; then
+		echo "  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀"
+		echo -e "  🚀                                  \033[1;34mEXTRA\033[m                                     🚀"
+		echo "  🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀"
+		test_extra
 	elif [[ $1 == "-f" ]] ; then
 		[[ ! -f $2 ]] && echo "\"$2\" FILE NOT FOUND"
 		[[ -f $2 ]] && test_from_file $2
 	else
-		echo "usage: mstest [m,vm,ne,b,a]"
+		echo "It's a good idea to try out a lot"
+		echo "of non-mandatory tests,"
+		echo "just to check for segfaults."
+		echo ""
+		echo "usage: mstest [m,b,a,vm,ne,d,x,-f]"
 		echo "m: mandatory tests"
-		echo "vm: mandatory tests with valgrind"
-		echo "ne: tests without environment"
 		echo "b: bonus tests"
 		echo "a: mandatory and bonus tests"
+		echo "vm: mandatory tests with valgrind"
+		echo "ne: tests without environment"
 		echo "d: mandatory pipe segfault test (BRUTAL)"
-
+		echo "x: extra tests, not required by the PDF"
+		echo "-f: use tests from a specific file,"
+		echo "given as full path"
 	fi
 	if [[ $TEST_COUNT -gt 0 ]] ; then
 		print_stats
@@ -97,6 +108,14 @@ test_mandatory_leaks() {
 
 test_mandatory() {
 	FILES="${RUNDIR}/cmds/mand/*"
+	for file in $FILES
+	do
+		test_from_file $file
+	done
+}
+
+test_extra() {
+	FILES="${RUNDIR}/cmds/extra/*"
 	for file in $FILES
 	do
 		test_from_file $file

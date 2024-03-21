@@ -29,10 +29,6 @@ echo 42 | echo no | echo smth | grep no
 
 echo 42 | echo no | echo smth | grep smth
 
-/bin/env | grep "_="
-
-/bin/env | grep "SHLVL"
-
 /bin/echo 1 | kaka
 
 echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
@@ -93,20 +89,6 @@ as $HOME
 stop3
 /bin/rm -f out
 
-ls | cat << stop | ls -la | cat << stop1 | ls | cat << stop2 | ls -la > > out | cat << stop3
-fe
-wf
-fwe
-f
-stop
-dw
-stop1
-dwasd
-stop2
-cat Makefile | ls > out
-cat out
-/bin/rm -f out
-
 ls | cat << stop | ls -la > out0| cat << stop1 | ls | cat << stop2 | ls -la >> out | cat << stop3
 fe
 wf
@@ -146,7 +128,6 @@ ls|cat Makefile|> out
 
 ls|cat Makefile|>> out
 /bin/rm -f out
-
 
 ls|cat Makefile|cat<<asd>out
 $USER
