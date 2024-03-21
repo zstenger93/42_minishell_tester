@@ -90,7 +90,6 @@ bash tester.sh [m vm ne d b a] {b, builtins, pa, parsing, r, redirections, pi, p
 ---
 
 # How To Install and Run
-
 To install the script, copy and run following command:
 
 ```
@@ -105,6 +104,47 @@ So that you can run the program in any directory (where your minishell is) by ca
 
 ```
 mstest
+```
+
+---
+
+# How To Launch The Tester
+
+Do this if not using the `mstest` alias:
+* Clone it to the root of your minishell
+* cd to the tester's folder
+
+## Options
+Of course if using the `mstest` alias,
+use that instead of `bash tester.sh`.
+So a command should look like this:
+`mstest help` or `mstest m` and etc.
+
+When using the `mstest` alias, you don't
+need to cd to the tester's folder.
+
+Some options are not shown here,
+run the help command to see them!
+
+Print all options:
+```bash
+bash tester.sh help
+```
+Mandatory tests:
+```bash
+bash tester.sh m
+```
+Mandatory tests (with valgrind):
+```bash
+bash tester.sh vm
+```
+Tests for bonus from PDF:
+```bash
+bash tester.sh b
+```
+Tests both mandatory and bonus:
+```bash
+bash tester.sh a
 ```
 
 ---
