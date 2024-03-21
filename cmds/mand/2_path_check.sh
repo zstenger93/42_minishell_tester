@@ -3,13 +3,6 @@
 # **************************************************************************** #
 
 unset PATH
-echo $PATH
-/bin/ls
-echo 1
-cd -
-echo 42
-
-unset PATH
 echo 42
 unset PATH
 unset PATH
@@ -23,13 +16,9 @@ echo $PATH
 
 echo 1
 
-cd -
-
+pwd
+unset PATH
 cd .
-
-cd ~
-
-cd ~/Desktop/
 pwd
 
 export PATH=
@@ -39,10 +28,6 @@ echo 1
 export PATH=1
 echo $PATH
 echo 1
-
-env -i ./minishell
-cd /bin/
-ls
 
 touch tmp_x_file1
 tmp_x_file1
@@ -63,7 +48,10 @@ echo $?
 echo 42
 /bin/rm -f tmp_x_file1
 
+pwd
+unset PATH
 cd doesntexist
+pwd
 
 export PATH=""
 ls
