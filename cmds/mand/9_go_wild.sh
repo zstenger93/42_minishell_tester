@@ -25,6 +25,8 @@ rm -f tmp_out
 
 grep 1 < filedoesnotexist | echo 1 | grep 1 | head -1 | cat | ls
 
+cat < Makefile >> out | cat | wc -l
+
 /usr/bin/env -i bash -c "env" | wc -l
 
 export test="arg1	arg2"
