@@ -24,7 +24,41 @@ TESTFILES=""
 COMMAND=$1
 
 main() {
-	parse_args()
+	while [ -n "$2" ]
+	do
+		case $2 in
+			"builtins" | "b") 
+				TESTFILES+="${RUNDIR}/cmds/mand/1_builtins.sh"
+				;;
+			"parsing" | "pa") 
+				TESTFILES+=" ${RUNDIR}/cmds/mand/0_compare_parsing.sh"
+				TESTFILES+=" ${RUNDIR}/cmds/mand/10_parsing_hell.sh"
+				;;
+			"redirections" | "r")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_redirs.sh"
+				;;
+			"pipelines" | "pi")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_pipeline.sh"
+				;;
+			"cmds" | "c")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_scmd.sh"
+				;;
+			"variables" | "v")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_variables.sh"
+				;;
+			"corrections" | "co")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_corrections.sh"
+				;;
+			"path")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_path_check.sh"
+				;;
+			"syntax" | "s")
+				TESTFILES+=" ${RUNDIR}/cmds/mand/1_syntax_errors.sh"
+				;;
+		esac
+		shift
+	done
+	set "$COMMAND"
 	if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then
 		echo -e "\033[1;31m# **************************************************************************** #"
 		echo "#                            MINISHELL NOT COMPILED                            #"
@@ -84,44 +118,6 @@ main() {
 	fi
 	# \_o_/ this is my ananas.jpeg \_o_/
 	rm -rf test
-}
-
-parse_args() {
-	while [ -n "$2" ]
-	do
-		case $2 in
-			"builtins" | "b") 
-				TESTFILES+="${RUNDIR}/cmds/mand/1_builtins.sh"
-				;;
-			"parsing" | "pa") 
-				TESTFILES+=" ${RUNDIR}/cmds/mand/0_compare_parsing.sh"
-				TESTFILES+=" ${RUNDIR}/cmds/mand/10_parsing_hell.sh"
-				;;
-			"redirections" | "r")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_redirs.sh"
-				;;
-			"pipelines" | "pi")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_pipeline.sh"
-				;;
-			"cmds" | "c")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_scmd.sh"
-				;;
-			"variables" | "v")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_variables.sh"
-				;;
-			"corrections" | "co")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_corrections.sh"
-				;;
-			"path")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_path_check.sh"
-				;;
-			"syntax" | "s")
-				TESTFILES+=" ${RUNDIR}/cmds/mand/1_syntax_errors.sh"
-				;;
-		esac
-		shift
-	done
-	set "$COMMAND"
 }
 
 test_no_env() {
