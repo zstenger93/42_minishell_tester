@@ -20,6 +20,53 @@ THREE=0
 GOOD_TEST=0
 LEAKS=0
 
+TESTFILES=""
+
+COMMAND=$1
+
+while [ -n "$2" ]
+do
+	case $2 in
+		"builtins" | "b") 
+			TESTFILES+="${RUNDIR}/cmds/mand/1_builtins.sh"
+			;;
+		"parsing" | "pa") 
+			TESTFILES+=" ${RUNDIR}/cmds/mand/0_compare_parsing.sh"
+			TESTFILES+=" ${RUNDIR}/cmds/mand/10_parsing_hell.sh"
+			;;
+		"redirections" | "r")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_redirs.sh"
+			;;
+		"pipelines" | "pi")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_pipeline.sh"
+			;;
+		"cmds" | "c")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_scmd.sh"
+			;;
+		"variables" | "v")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_variables.sh"
+			;;
+		"corrections" | "co")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_corrections.sh"
+			;;
+		"path")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_path_check.sh"
+			;;
+		"syntax" | "s")
+			TESTFILES+=" ${RUNDIR}/cmds/mand/1_syntax_errors.sh"
+			;;
+	esac
+	shift
+done
+set "$COMMAND"
+
+echo
+echo
+echo arg 1 : $1
+echo $TESTFILES
+echo
+echo
+
 main() {
 	if [[ ! -f $MINISHELL_PATH/$EXECUTABLE ]] ; then
 		echo -e "\033[1;31m# **************************************************************************** #"
@@ -63,13 +110,16 @@ main() {
 		[[ ! -f $2 ]] && echo "\"$2\" FILE NOT FOUND"
 		[[ -f $2 ]] && test_from_file $2
 	else
-		echo "usage: mstest [m,vm,ne,b,a]"
+		echo "usage: mstest [m,vm,ne,b,a] {builtins,b,parsing,pa,redirections,r,pipelines,pi,cmds,c,variables,v,corrections,co,path,syntax,s}..."
 		echo "m: mandatory tests"
 		echo "vm: mandatory tests with valgrind"
 		echo "ne: tests without environment"
 		echo "b: bonus tests"
 		echo "a: mandatory and bonus tests"
 		echo "d: mandatory pipe segfault test (BRUTAL)"
+		echo "Starting from the second argument, their can be any number of argument specified between brackets."
+		echo "You can test a specific part of your minishell by writing mstest vm builtins redirections"
+		echo "If the part list is empty, everything will be tested."
 
 	fi
 	if [[ $TEST_COUNT -gt 0 ]] ; then
@@ -83,7 +133,10 @@ test_no_env() {
 	FILES="${RUNDIR}/cmds/no_env/*"
 	for file in $FILES
 	do
-		test_without_env $file
+		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		then
+			test_without_env $file
+		fi
 	done
 }
 
@@ -91,7 +144,10 @@ test_mandatory_leaks() {
 	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
-		test_leaks $file
+		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		then
+			test_leaks $file
+		fi
 	done
 }
 
@@ -99,7 +155,10 @@ test_mandatory() {
 	FILES="${RUNDIR}/cmds/mand/*"
 	for file in $FILES
 	do
-		test_from_file $file
+		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		then
+			test_from_file $file
+		fi
 	done
 }
 
@@ -107,7 +166,10 @@ test_mini_death() {
 	FILES="${RUNDIR}/cmds/mini_death/*"
 	for file in $FILES
 	do
-		test_from_file $file
+		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		then
+			test_from_file $file
+		fi
 	done
 }
 
@@ -115,7 +177,10 @@ test_bonus() {
 	FILES="${RUNDIR}/cmds/bonus/*"
 	for file in $FILES
 	do
-		test_from_file $file
+		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		then
+			test_from_file $file
+		fi
 	done
 }
 
@@ -186,7 +251,7 @@ test_from_file() {
 				((line_count++))
 			done
 			# INPUT=${INPUT%?}
-			echo -n "$INPUT" | $MINISHELL_PATH/$EXECUTABLE 2>tmp_err_minishell >tmp_out_minishell
+		echo -n "$INPUT" | $MINISHELL_PATH/$EXECUTABLE 2>tmp_err_minishell >tmp_out_minishell
 			exit_minishell=$?
 			echo -n "enable -n .$NL$INPUT" | bash 2>tmp_err_bash >tmp_out_bash
 			exit_bash=$?
