@@ -64,24 +64,52 @@ Clone it to the root of your minishell
 cd to the testers folder
 ## Options
 
+First agument : 
+
+
 ```bash
-bash tester.sh m
+bash tester.sh m	# Mandatory tests
 ```
 ```bash
-bash tester.sh vm
+bash tester.sh vm	# Mandatory tests with valgrind
 ```
 ```bash
-bash tester.sh ne
+bash tester.sh ne	# Mandatory tests without environment
 ```
 ```bash
-bash tester.sh d
+bash tester.sh d	# Mandatory pipe segfault test (BRUTAL)
 ```
 ```bash
-bash tester.sh b
+bash tester.sh b	# Bonus tests
 ```
 ```bash
-bash tester.sh a
+bash tester.sh a	# All the tests
 ```
+
+Second argument :
+
+```bash
+bash tester.sh [m vm ne d b a] {b, builtins, pa, parsing, r, redirections, pi, pipelines, c, cmds, v, variables, co, corrections, path, s, syntax}
+	m				# Mandatory tests
+	vm				# Mandatory tests with valgrind
+	ne				# Mandatory tests without environment
+	d				# Mandatory pipe segfault test (BRUTAL)
+	b				# Bonus tests
+	a				# All the tests
+
+	For the mandatory and valgrind mandatory tests, additionnal flags can be specified :
+
+	b, builtins		# builtins-specific tests
+	pa, parsing		# parsing-specific tests
+	r, redirections	# redirections-specific tests
+	pi, pipelines	# pipelines-specific tests
+	c, cmds			# full-commands tests
+	v, variables	# environment variables tests
+	co, corrections	# corrections' subject tests
+	path			# path resolving tests
+	s, syntax		# syntax errors tests
+```
+
 
 ---
 
