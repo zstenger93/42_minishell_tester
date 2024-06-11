@@ -65,23 +65,27 @@ cd to the testers folder
 ## Options
 
 ```bash
-bash tester.sh m
+bash tester.sh [m vm ne d b a] {b, builtins, pa, parsing, r, redirections, pi, pipelines, c, cmds, v, variables, co, corrections, path, s, syntax}
+	m				# Mandatory tests
+	vm				# Mandatory tests with valgrind
+	ne				# Mandatory tests without environment
+	d				# Mandatory pipe segfault test (BRUTAL)
+	b				# Bonus tests
+	a				# All the tests
+
+	For the mandatory and valgrind mandatory tests, additionnal flags can be specified :
+
+	b, builtins			# builtins-specific tests
+	pa, parsing			# parsing-specific tests
+	r, redirections			# redirections-specific tests
+	pi, pipelines			# pipelines-specific tests
+	c, cmds				# full-commands tests
+	v, variables			# environment variables tests
+	co, corrections			# corrections' subject tests
+	path				# path resolving tests
+	s, syntax			# syntax errors tests
 ```
-```bash
-bash tester.sh vm
-```
-```bash
-bash tester.sh ne
-```
-```bash
-bash tester.sh d
-```
-```bash
-bash tester.sh b
-```
-```bash
-bash tester.sh a
-```
+
 
 ---
 
