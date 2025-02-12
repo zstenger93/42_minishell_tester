@@ -28,7 +28,23 @@ main() {
 	do
 		case $2 in
 			"builtins" | "b") 
-				TESTFILES+="${RUNDIR}/cmds/mand/1_builtins.sh"
+				if [ "$3" == "echo" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_echo.sh"  # Run echo-specific tests
+				elif [ "$3" == "cd" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_cd.sh"    # Run cd-specific tests
+				elif [ "$3" == "pwd" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_pwd.sh"   # Run pwd-specific tests
+				elif [ "$3" == "export" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_export.sh" # Run export-specific tests
+				elif [ "$3" == "unset" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_unset.sh"  # Run unset-specific tests
+				elif [ "$3" == "env" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_env.sh"    # Run env-specific tests
+				elif [ "$3" == "exit" ]; then
+					TESTFILES+="${RUNDIR}/cmds/subsets/1_builtins_exit.sh"   # Run exit-specific tests
+				else
+					TESTFILES+="${RUNDIR}/cmds/mand/1_builtins.sh"         # Run all builtins tests
+				fi
 				;;
 			"parsing" | "pa") 
 				TESTFILES+=" ${RUNDIR}/cmds/mand/0_compare_parsing.sh"
@@ -143,12 +159,16 @@ test_mandatory_leaks() {
 }
 
 test_mandatory() {
-	FILES="${RUNDIR}/cmds/mand/*"
+	FILES="${RUNDIR}/cmds/mand/* ${RUNDIR}/cmds/subsets/*"
 	for file in $FILES
 	do
-		if [[ $TESTFILES =~ $file ]] || [ -z $TESTFILES ]
+		if [[ $TESTFILES =~ $file ]]
 		then
 			test_from_file $file
+		elif  [ -z $TESTFILES ] && [[ "$file" == "${RUNDIR}/cmds/mand/"* ]]
+		then
+			test_from_file $file
+
 		fi
 	done
 }

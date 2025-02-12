@@ -86,6 +86,13 @@ bash tester.sh [m vm ne d b a] {b, builtins, pa, parsing, r, redirections, pi, p
 	s, syntax			# syntax errors tests
 ```
 
+**Sub-Tests (Specific to Mandatory Tests):**
+
+For even finer-grained control over the mandatory tests (`m`), you can specify *sub-tests* after selecting the `b` (builtins) flag. This allows you to target specific functionalities within a broader category.
+
+```bash
+mstest m b echo
+```
 
 ---
 
