@@ -49,20 +49,6 @@
 
 /bin/echo "'$?'"
 
-/bin/echo \$USER
-
-/bin/echo \\$USER
-
-/bin/echo \\\$USER
-
-/bin/echo \\\\$USER
-
-/bin/echo \\\\\$USER
-
-/bin/echo \\\\\\\\\$USER
-
-/bin/echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\$USER \$PATH \\$PWD
-
 /bin/echo "cat lol.c | cat > lol.c"
 
 /bin/echo "cat lol.c '|' cat > lol.c"

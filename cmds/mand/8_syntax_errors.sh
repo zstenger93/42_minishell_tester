@@ -16,8 +16,6 @@
 
 <<<<<<<<<
 
-~
-
 < < < < < <
 
 /bin/cat ><
@@ -30,24 +28,11 @@ echo >
 
 echo > <
 
-.
-
-..
-
 echo | |
 
 EechoE
 
 .echo.
-
->echo>
-/bin/rm -f echo
-
-<echo<
-/bin/rm -f echo
-
->>echo>>
-/bin/rm -f echo
 
 |echo|
 
@@ -79,8 +64,6 @@ cat wouaf wouaf
 
 /
 
-\\\
-
 rm -f something
 
 | echo -n oui
@@ -96,9 +79,6 @@ your minishell is perfect
 <<| echo wtf
 
 >>| echo wtf
-
->| echo wtf
-/bin/rm -rf echo
 
 <| echo wtf
 

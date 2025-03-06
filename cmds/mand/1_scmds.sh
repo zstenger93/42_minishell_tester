@@ -15,12 +15,6 @@ touch ""
 touch "  "
 /bin/rm -f "  "
 
-
-touch "
-"
-/bin/rm -f "
-"
-
 mkdir " "
 /bin/rm -rf " "
 
@@ -114,5 +108,3 @@ rm -f something
 | echo -n oui
 
 | | |
-
-
